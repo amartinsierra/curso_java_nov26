@@ -6,8 +6,8 @@ import com.cursojava.alumnos.model.Alumno;
 import com.cursojava.alumnos.service.AlumnosService;
 
 public class AlumnosView {
-	static AlumnosService notasService=new AlumnosService();
-	public static void main(String[] args) {
+	 AlumnosService notasService=new AlumnosService();
+	 void main() {
 		//bucle que muestra el menú mientras la opcion
 		//sea diferente a salir
 		int opcion;
@@ -18,13 +18,13 @@ public class AlumnosView {
 
 			opcion=Integer.parseInt(scan.nextLine());
 			switch(opcion) {
-				case 1->guardarNota();
+				case 1->guardarAlumno();
 	
 				case 2->totalAprobados();
 	
 				case 3->mostrarMedia();
 	
-				case 4->mostrarNotas();	
+				case 4->mostrarAlumnos();	
 				case 5->System.out.println("Adios");
 			}
 			
@@ -32,7 +32,7 @@ public class AlumnosView {
 	}
 	
 	//método para mostrar el menú
-	static void menu() {
+	void menu() {
 		System.out.println("1.- Introducir alumno");
 		System.out.println("2.- Total aprobados");
 		System.out.println("3.- Mostrar media");
@@ -40,7 +40,7 @@ public class AlumnosView {
 		System.out.println("5.- Salir");
 	}
 	//método para pedir la nota y guardarla
-	static void guardarNota() {
+	void guardarAlumno() {
 		Scanner scan=new Scanner(System.in);
 		System.out.println("Introduce nota: ");
 		int nota=Integer.parseInt(scan.nextLine());
@@ -56,15 +56,15 @@ public class AlumnosView {
 		
 	}
 	//método para mostrar media
-	static void mostrarMedia() {
+	void mostrarMedia() {
 		System.out.println("Media: "+notasService.media());
 	}
 	//método para mostrar aprobados
-	static void totalAprobados() {
+	void totalAprobados() {
 		System.out.println("Aprobados: "+notasService.aprobados());
 	}
 	//método para mostrar todas las notas
-	static void mostrarNotas() {
+	void mostrarAlumnos() {
 		for(Alumno a:notasService.recuperarAlumnos()) {
 			System.out.println("Nombre: "+a.nombre()+" Curso: "+a.curso()+" Nota:"+a.nota());
 		}		

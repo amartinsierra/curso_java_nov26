@@ -14,6 +14,14 @@ public class AlumnosService {
 		}
 		return alumnos.add(alumno);
 	}
+	public boolean guardarAlumno(String nombre, String curso, int nota) {
+		for(Alumno al:alumnos) {
+			if(al.nombre().equals(nombre)&&al.curso().equals(curso)) {
+				return false;
+			}
+		}
+		return alumnos.add(new Alumno(nombre,curso,nota));
+	}
 	public int aprobados() {
 		int aprobados=0;
 		for(Alumno a:alumnos) {

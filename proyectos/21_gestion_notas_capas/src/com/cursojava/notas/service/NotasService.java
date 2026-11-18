@@ -1,4 +1,4 @@
-package service;
+package com.cursojava.notas.service;
 
 import java.util.ArrayList;
 

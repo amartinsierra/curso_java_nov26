@@ -1,9 +1,9 @@
-package main;
+package com.cursojava.notas.main;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import service.NotasService;
+import com.cursojava.notas.service.NotasService;
 
 public class GestorNotas {
 	//realizar un programa que lea las notas de alumnos,

@@ -66,7 +66,8 @@ public class AlumnosView {
 	//método para mostrar todas las notas
 	void mostrarAlumnos() {
 		for(Alumno a:notasService.recuperarAlumnos()) {
-			System.out.println("Nombre: "+a.nombre()+" Curso: "+a.curso()+" Nota:"+a.nota());
+			//System.out.println("Nombre: "+a.nombre()+" Curso: "+a.curso()+" Nota:"+a.nota());
+			System.out.println(a);
 		}		
 	}
 }

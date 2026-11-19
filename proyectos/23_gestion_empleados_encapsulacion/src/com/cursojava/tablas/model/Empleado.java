@@ -1,6 +1,6 @@
 package com.cursojava.tablas.model;
 
-public class Empleado {
+public class Empleado{
 	private int codigo;
 	private String nombre;
 	private double salario;

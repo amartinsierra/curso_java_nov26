@@ -10,6 +10,7 @@ public class TestMetodos {
 		//cada elemento de la lista en su cuadrado y finalmente lo muestras
 		lista.removeIf(n->n<0);
 		lista.replaceAll(n->n*n);
-		lista.forEach(n->System.out.println(n));
+		//lista.forEach(n->System.out.println(n));
+		lista.forEach(System.out::println);
 	}
 }

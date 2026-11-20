@@ -10,12 +10,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.List;
 
 public class NotasService {
 	Path path=Path.of("notas.txt");
 	public void agregarNota(int nota) {
 		try {
-			Files.writeString(path, String.valueOf(nota), StandardOpenOption.APPEND);
+			Files.writeString(path, String.valueOf(nota)+"\n", StandardOpenOption.APPEND);
 		}catch(IOException ex) {
 			ex.printStackTrace();
 		}
@@ -33,8 +34,28 @@ public class NotasService {
 				}
 	}
 	public int aprobados() {
-		
-		
+		try {
+			return (int)Files.lines(path) //Stream<String>
+					.mapToInt(s->Integer.parseInt(s))
+					.filter(n->n>=5)
+					.count();
+		}catch(IOException ex) {
+			ex.printStackTrace();
+			return 0;
+		}
 	}
+	public List<Integer> obtenerNotas(){
+		try {
+			return Files.lines(path)
+					.map(s->Integer.parseInt(s)) //Stream<Integer>
+					.toList();
+					
+		}catch(IOException ex) {
+			ex.printStackTrace();
+			return List.of();
+		}
+	}
+		
+	
 	
 }

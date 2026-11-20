@@ -16,7 +16,7 @@ public class NotasService {
 	Path path=Path.of("notas.txt");
 	public void agregarNota(int nota) {
 		try {
-			Files.writeString(path, String.valueOf(nota)+"\n", StandardOpenOption.APPEND);
+			Files.writeString(path, nota+"\n", StandardOpenOption.APPEND);
 		}catch(IOException ex) {
 			ex.printStackTrace();
 		}
